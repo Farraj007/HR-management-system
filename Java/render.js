@@ -38,3 +38,4 @@ const employeeArr= [ghazi,lana,tamara,safi,omar,rana,Hadi]
 for (let i= 0 ; i<7 ; i++){
   employeeArr[i].render();
 }
+// had a problem with vs and ubunto the vs shutdown and i cloned form the main then forgot to switch back .. idk what was that but i think in real life when the main will be closed or managable won't happen 
