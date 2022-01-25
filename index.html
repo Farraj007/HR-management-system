@@ -27,17 +27,48 @@
       </nav>
     </header>
     <main>
+      <section class="input">
+        <h2>New Employees</h2>
+        <form id="newemployees">
+          <fieldset>
+            <legend>Add New Employees</legend>
+            <label for="fullName">Employee Name</label>
+            
+            <input  type="text" name="fullName" id="fullName" placeholder="Employee Full Name" />
+            <br>
+            <label for="department">Employee Department</label>
+            <select name="department" id="department"> <option value="aministration">Administration</option>
+              <option value="marketing">Marketing</option>
+              <option value="development">Development</option>
+              <option value="Finance">AFinance</option> </select>
+              <br>
+              <label for="level">Employee level</label>
+              <select name="level" id="level"> 
+                <option value="Senior">Senior</option>
+                <option value="Mid-Senior">Marketing</option>
+                <option value="Junior">Junior</option>
+              </select>
+              <br>
+              <label for="imagePath">Image URL</label>
+              <input type="text" name="imgurl" id="imgurl"/>
+              <br>
+              <input type="submit" value="Add New Employee"/>
+
+          </fieldset>
+        </form>
+
+
+
+
+      </section>
+      <section>
+
       <script src="/Java/render.js" class="employee"></script>
       <button type="button" onclick="alert('You Are that curious!')">
         Click Me!
       </button>
-      <section>
+     </section>
 
-
-
-
-        
-      </section>
     </main>
     <footer>
       <div id="cc">
