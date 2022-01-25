@@ -26,11 +26,11 @@ EmployeeInformation.prototype.render = function(){
     document.write(`<p> Salary: ${this.salary}</p> `);
 }
 
-// const employeeArr=
+
 let ghazi = new EmployeeInformation('1000', 'Ghazi Samer', 'Administration', 'Senior');
 let lana = new EmployeeInformation('1001', 'Lana Ali', 'Finance', 'Senior');
 let tamara = new EmployeeInformation('1002', 'Tamara Ayoub', 'Marketing', 'Senior');
-let safi = new EmployeeInformation('1003', 'Safi Walid', 'Administration', 'Mid-senior');
+let safi = new EmployeeInformation('1003', 'Safi Walid', 'Administration', 'Mid-Senior');
 let omar = new EmployeeInformation('1004', 'Omar Zaid', 'Development', 'Senior');
 let rana = new EmployeeInformation('1005', 'Rana Saleh', 'Development', 'Junior');
 let Hadi = new EmployeeInformation('1006', 'Hadi Ahmad', 'Finance', 'Mid-Senior');
@@ -38,4 +38,3 @@ const employeeArr= [ghazi,lana,tamara,safi,omar,rana,Hadi]
 for (let i= 0 ; i<7 ; i++){
   employeeArr[i].render();
 }
-// had a problem with vs and ubunto the vs shutdown and i cloned form the main then forgot to switch back .. idk what was that but i think in real life when the main will be closed or managable won't happen 
