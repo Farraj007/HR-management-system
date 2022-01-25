@@ -55,9 +55,33 @@ button{
     margin: 10px 10px;
     border-radius: 5px;  
 }
+main{
+    display: flex;
+     flex-direction: column; 
+}
+#newemployees{
+    width: 60%;
+    align-self: center;
+}
+input , select{
+    align-self: center;
+    width: 30%;
+    margin-bottom: 10px;
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
 footer {
     background-color: brown;
-    color: #fff;
+    color: rgb(82, 33, 33);
     margin: 0px;
     padding: 16px;
     display: flex;
@@ -78,6 +102,7 @@ footer {
     height: 50vh;
     justify-content: space-between;
     align-items: center;
+    color: #fff;
     
 }
 .footer-container a{
