@@ -41,17 +41,44 @@ function EmployeeInformation(employeeID, fullName, department, level) {
 // let GenerateRandomNum 
 EmployeeInformation.prototype.generateRandomNum = function() {
   return   Math.floor(Math.random()* (9000+999))
-}
+// }
+// EmployeeInformation.prototype.calculatePrice = function(min,max){
+//   this.price = getRandomNumber(min,max);
+// };
 let newemployees = document.getElementById("newemployees")
 newemployees.addEventListener("submit", submit)
 
 function submit(event){
   event.preventDefault();
   console.log(newemployees)
-  // let employeeID = event.target.employeeID.value;
-  //  let fullName = event.target.fullName.value;
-  // let department = event.target.department.value;
-  // let level = event.target.level.checked;
+  let employeeID = event.target.employeeID.value;
+   let fullName = event.target.fullName.value;
+  let department = event.target.department.value;
+  let level = event.target.level.checked;
   console.log(event.target.fullName.value)
-  // let imagePath = event.target.imagePath.value;
+  let imagePath = event.target.imagePath.value;
+  let newemployees = new newemployees(employeeID,fullName,departmente,level,imagePath);
+  newemployees.generateRandomNum();
+  newemployees.render();
+  console.log(newemployees);
 }
+EmployeeInformation.prototype.render = function(){
+  
+  let mySection = document.getElementById('EmployeeInformation');
+  let divEmployee = document.createElement('div');
+  mySection.appendChild(divEmployee);
+
+  let h4Eemployee = document.createElement('h4');
+  divEmployee.appendChild(h4El)
+  h4Employee.textContent = 'Name:'+ this.fullName+'-ID'+this.employeeID
+  let h4department = document.createElement('h4');
+  divDeparment.appendChild(h4Eemployee)
+  h4department.textContent= 'Department'+this.department +'-ID'+this.department
+  let h3Salary =document.createElement('h3');
+  divSalary.appendChild(h3Salary)
+  let imgEl = document.createElement('img');
+  divEl.appendChild(imgEl);
+  imgEl.setAttribute('src', this.imagePath)
+
+  imgEl.setAttribute('alt',this.name);
+} }
