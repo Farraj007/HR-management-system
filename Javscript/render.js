@@ -2,15 +2,20 @@
 
 alert("Welcome To HR Managment System");
 
-function EmployeeInformation(fullName, department, level, imagePath) {
-  this.employeeID = this.generateRandomNum();
+let id
+
+function EmployeeInformation(employeeID,fullName, department, level, imagePath) {
+  this.employeeID = generateRandomNum(employeeID);
   this.fullName = fullName;
   this.department = department;
   this.level = level;
 
-  this.salary = this.salaryGenerator() * 0.925;
+  this.salary = 0;
   this.imagePath = imagePath || "https://via.placeholder.com/150" ;
+  EmployeeInformation.allEmployees.push(this)
 }
+EmployeeInformation.allEmployees = []
+
 
 EmployeeInformation.prototype.salaryGenerator = function () {
   if (this.level == "Senior") {
@@ -20,6 +25,7 @@ EmployeeInformation.prototype.salaryGenerator = function () {
   } else if (this.level == "Junior") {
     return Math.floor(Math.random() * (1000 - 500)) + 500;
   }
+  return this.salary * 0.925;
 };
 
 // EmployeeInformation.prototype.render = function(){
@@ -27,20 +33,18 @@ EmployeeInformation.prototype.salaryGenerator = function () {
 //     document.write(`<p> Salary: ${this.salary}</p> `);
 // }
 
-// let ghazi = new EmployeeInformation('1000', 'Ghazi Samer', 'Administration', 'Senior');
-// let lana = new EmployeeInformation('1001', 'Lana Ali', 'Finance', 'Senior');
-// let tamara = new EmployeeInformation('1002', 'Tamara Ayoub', 'Marketing', 'Senior');
-// let safi = new EmployeeInformation('1003', 'Safi Walid', 'Administration', 'Mid-Senior');
-// let omar = new EmployeeInformation('1004', 'Omar Zaid', 'Development', 'Senior');
-// let rana = new EmployeeInformation('1005', 'Rana Saleh', 'Development', 'Junior');
-// let Hadi = new EmployeeInformation('1006', 'Hadi Ahmad', 'Finance', 'Mid-Senior');
-// const employeeArr= [ghazi,lana,tamara,safi,omar,rana,Hadi]
-// for (let i= 0 ; i<7 ; i++){
-//   employeeArr[i].render();
-// }
+let ghazi = new EmployeeInformation('1000', 'Ghazi Samer', 'Administration', 'Senior','imgs/Ghazi.jpg');
+let lana = new EmployeeInformation('1001', 'Lana Ali', 'Finance', 'Senior',`imgs/Lana.jpg`);
+let tamara = new EmployeeInformation('1002', 'Tamara Ayoub', 'Marketing', 'Senior','imgs/Tamara.jpg');
+let safi = new EmployeeInformation('1003', 'Safi Walid', 'Administration', 'Mid-Senior','imgs/Safi.jpg');
+let omar = new EmployeeInformation('1004', 'Omar Zaid', 'Development', 'Senior','imgs/Omar.jpg');
+let rana = new EmployeeInformation('1005', 'Rana Saleh', 'Development', 'Junior','imgs/Rana.jpg');
+let Hadi = new EmployeeInformation('1006', 'Hadi Ahmad', 'Finance', 'Mid-Senior','imgs/Hadi.jpg');
+const employeeArr= [ghazi,lana,tamara,safi,omar,rana,Hadi]
 
-EmployeeInformation.prototype.generateRandomNum = function () {
-  return Math.floor(Math.random() * (9000 + 999));
+ function generateRandomNum() {
+ id = Math.floor(Math.random() * (9999 - 1000)+1000);
+ 
 };
 
 let newemployees = document.getElementById("newemployees");
@@ -61,7 +65,7 @@ function submit(event) {
     level,
     imagePath
   );
-  newemployees.generateRandomNum();
+  generateRandomNum(id);
   newemployees.render();
   console.log(newemployees);
   console.log(imagePath);
@@ -108,3 +112,27 @@ EmployeeInformation.prototype.render = function () {
   imgEl.setAttribute("alt", this.fullName);
   imgEl.style = "width: 170px; height: 170px; border-radius: 50%";
 };
+
+for (let i= 0 ; i<7 ; i++){
+  employeeArr[i].render();
+}
+
+
+console.log(EmployeeInformation.allEmployees)
+function settingitem(){
+  let data = JSON.stringify(EmployeeInformation.allEmployees);
+  localStorage.setItem('employees',data);
+
+
+}
+
+function gettingitem() {
+  let stringObj = localStorage.getItem('employees'); /// retrieve employees data from local storage
+  let parsObj = JSON.parse(stringObj);
+  if (parsObj !== null){
+    EmployeeInformation.allEmployees = parsObj;
+  }
+  render();
+}
+
+gettingitem();
