@@ -48,6 +48,9 @@ main{
     display: flex;
 
 }
+#employeeInformation {
+    display: flex;
+}
 
 button{
     color: blue;
