@@ -3,7 +3,7 @@
 alert("Welcome To HR Managment System");
 
 function EmployeeInformation(fullName, department, level, imagePath) {
-  this.employeeID = this.generateRandomNum();
+  this.employeeID = this.generateRandomNum()
   this.fullName = fullName;
   this.department = department;
   this.level = level;
@@ -76,35 +76,36 @@ EmployeeInformation.prototype.render = function () {
   mySection.appendChild(card);
   card.style =`
   padding: 15px;
-  margin: 50px 10px;
+  margin: 30px 15px;
   width: 230px;
   background-color: rgb(135, 252,10);
   display: flex;
   align-items: center;
-  flex-direction: column; `;
-
-  let divEmployee = document.createElement("div");
-  card.appendChild(divEmployee);
-  divEmployee.style = "width: 170px; height: 170px; border-radius: 50%";
-
-  let h4Employee = document.createElement("h4");
-  divEmployee.appendChild(h4Employee);
-  h4Employee.style = ``;
-  h4Employee.textContent = "Name: " + this.fullName + "-ID" + this.employeeID;
-  let h4department = document.createElement("h4");
-  divEmployee.appendChild(h4department);
-  h4department.textContent ="Department " + this.department + "-ID " + this.level;
-  h4department.style = `display: flex; margin:5px; width:138px;`;
-
-  let h3Salary = document.createElement("h3");
-  divEmployee.appendChild(h3Salary);
-  h3Salary.textContent = this.salary;
-  h3Salary.style = `margin: 0px; display: flex; width:138px;`;
+  flex-direction: column;
+  border-radius :25px  `;
   let imgEl = document.createElement("img");
-  divEmployee.appendChild(imgEl);
+  card.appendChild(imgEl);
 
   imgEl.setAttribute("src", this.imagePath);
 
   imgEl.setAttribute("alt", this.fullName);
-  imgEl.style = "width: 170px; height: 170px; border-radius: 50%";
+  imgEl.style = "width: 100px; height: 100px; border-radius: 50%; align-self: center";
+
+  let divEmployee = document.createElement("div");
+  card.appendChild(divEmployee);
+  divEmployee.style = "text-align:center; padding: 10px";
+
+  let h4Employee = document.createElement("h4");
+  divEmployee.appendChild(h4Employee);
+  h4Employee.style = `align-self:center`;
+  h4Employee.textContent = "Name: " + this.fullName + "-ID" + this.employeeID;
+  let h4department = document.createElement("h4");
+  divEmployee.appendChild(h4department);
+  h4department.textContent ="Department " + this.department + "-Level " + this.level;
+  h4department.style = `display: flex; margin:0px 5px; flex-flow:wrap; align-self:center`;
+
+  let h3Salary = document.createElement("h3");
+  divEmployee.appendChild(h3Salary);
+  h3Salary.textContent = this.salary;
+
 };
