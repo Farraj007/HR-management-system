@@ -3,7 +3,7 @@
 alert("Welcome To HR Managment System");
 
 function EmployeeInformation(fullName, department, level, imagePath) {
-  this.employeeID = this.generateRandomNum();
+  this.employeeID = this.generateRandomNum()
   this.fullName = fullName;
   this.department = department;
   this.level = level;
@@ -75,7 +75,7 @@ function render(){
   mySection.appendChild(card);
   card.style =`
   padding: 15px;
-  margin: 50px 10px;
+  margin: 30px 15px;
   width: 230px;
   background-color: rgb(135, 252,10);
   display: flex;
@@ -92,7 +92,7 @@ function render(){
 
   let divEmployee = document.createElement("div");
   card.appendChild(divEmployee);
-  divEmployee.style = "width: 170px; height: 170px; border-radius: 50%";
+  divEmployee.style = "text-align:center; padding: 10px";
 
   let h4Employee = document.createElement("h4");
   divEmployee.appendChild(h4Employee);
