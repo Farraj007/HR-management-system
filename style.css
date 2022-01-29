@@ -26,6 +26,8 @@ nav{
     width: 450px;
     display:flex;
     justify-content: space-between;
+    align-items: baseline;
+
 }
 ul{
     list-style: none;
