@@ -9,26 +9,64 @@
 <body>
     <link rel="stylesheet" href="style.css">
     <header>
-        <h1>HR HR-Managment-System</h1>
+        <h1>HR-Managment-System</h1>
         <nav>
-            <ul id="navigation">
-                <li><a href="index.html">Index</a> </li>
-               <li><a href="accounting.html">Accounting</a> </li>
-            </ul>
+          <ul id="navigation">
+            <li><a href="index.html">Index</a></li>
+            <li><a href="accounting.html">Accounting</a></li>
+            <li>
+              <input type="search" placeholder="Search" />
+              <input
+                type="submit"
+                value="Search"
+                id="search"
+                onclick="alert('For Real?')"
+              />
+            </li>
+          </ul>
         </nav>
+      </header>
     </header>
     <main>
-        <section id = 'Table'> 
-
-
-
-
-        </section>
+        <section id = 'myTable'> </section>
+     
         
-
+     <script src="/Javscript/accounting.js"></script>
     </main>
     <footer>
-
+        <div id="cc">
+            <p>Copy Right Reserved @2020</p>
+          </div>
+          <div class="footer-container">
+            <div class="footer-1">
+              <h3>About Us</h3>
+              <a href="#">Blog</a>
+              <a href="#">Creators</a>
+              <a href="#">Staff</a>
+              <a href="#">Investors</a>
+            </div>
+            <div class="footer-2">
+              <h3>Contact Us</h3>
+              <a href="#">Jobs</a>
+              <a href="#">Support</a>
+              <a href="#">Contact</a>
+              <a href="#">Internship</a>
+            </div>
+            <div class="footer-3">
+              <h3>Social Media</h3>
+              <a href="#">Facebook</a>
+              <a href="#">Youtube</a>
+              <a href="#">Instagram</a>
+              <a href="#">Discord</a>
+            </div>
+            <div class="sub">
+              <h3>Subscribe to Our Newsletter</h3>
+              <div class="sub-box">
+              <input type="Email" placeholder="Type your Email" id="box" />
+              <input type="submit" value="Sign Up" id="signup-button" />
+              </div>
+            </div>
+          </div>
     </footer>
     
 </body>
