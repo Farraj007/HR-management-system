@@ -2,7 +2,6 @@
 
 let data = localStorage.getItem("Employee");
 let parsObj = JSON.parse(data);
-
 let adminNum = 0
 let markNum = 0
 let devNum = 0
@@ -42,8 +41,8 @@ if (parsObj !== null) {
   totalSalary= adminSal+markSal+devSal+finSal
 }
 
-let totalEmployees =  markNum + markNum +devNum +adminNum;
-// let avgSalary = (markSal/markNum) + (finSal/finNum )+()
+let totalEmployees =  markNum + finNum +devNum +adminNum;
+
 
 function render (){
 let section = document.getElementById("myTable")
@@ -87,7 +86,7 @@ r2.appendChild(d32)
 d32.textContent= `${adminSal}`
 let d42 = document.createElement('td')
 r2.appendChild(d42)
-d42.textContent=  `${adminSal/adminNum}`
+d42.textContent=  `${(adminSal/adminNum)||0}`
 
 let r3= document.createElement('tr')
 table.appendChild(r3)
@@ -103,7 +102,7 @@ r3.appendChild(d33)
 d33.textContent= `${markSal}`
 let d43 = document.createElement('td')
 r3.appendChild(d43)
-d43.textContent=  `${markSal/markNum}`
+d43.textContent=  `${(markSal/markNum)||0}`
 
 
 let r4= document.createElement('tr')
@@ -120,7 +119,7 @@ r4.appendChild(d34)
 d34.textContent= `${devSal}`
 let d44 = document.createElement('td')
 r4.appendChild(d44)
-d44.textContent=  `${devSal/devNum}`
+d44.textContent=  `${(devSal/devNum)||0} `
 
 let r5= document.createElement('tr')
 table.appendChild(r5)
@@ -135,7 +134,7 @@ r5.appendChild(d35)
 d33.textContent= `${finSal}`
 let d45 = document.createElement('td')
 r5.appendChild(d45)
-d43.textContent=  `${finSal/finNum}`
+d43.textContent=  `${(finSal/finNum)||0}`
 
 let r6= document.createElement('tr')
 table.appendChild(r6)
@@ -150,6 +149,7 @@ r6.appendChild(tf3)
 tf3.textContent=`Total Salary for all departments = ${totalSalary}`
 let tf4 = document.createElement ('td')
 r6.appendChild(tf4)
-tf4.textContent=`Average salary for all departments = ${totalSalary/totalEmployees}`
+tf4.textContent=`Average salary for all departments = ${(totalSalary/totalEmployees)||0}`
 }
  render();
+ 
