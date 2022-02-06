@@ -91,18 +91,18 @@ d42.textContent=  `${(adminSal/adminNum)||0}`
 let r3= document.createElement('tr')
 table.appendChild(r3)
 
-let d13 = document.createElement('td')
+let d13=document.createElement('td')
 r3.appendChild(d13)
 d13.textContent= 'Marketing'
-let d23 = document.createElement('td')
+let d23=document.createElement('td')
 r3.appendChild(d23)
 d23.textContent= `${markNum}`
-let d33 = document.createElement('td')
+let d33=document.createElement('td')
 r3.appendChild(d33)
 d33.textContent= `${markSal}`
-let d43 = document.createElement('td')
+let d43=document.createElement('td')
 r3.appendChild(d43)
-d43.textContent=  `${(markSal/markNum)||0}`
+d43.textContent=`${(markSal/markNum)||0}`
 
 
 let r4= document.createElement('tr')
@@ -125,16 +125,16 @@ let r5= document.createElement('tr')
 table.appendChild(r5)
 let d15 = document.createElement('td')
 r5.appendChild(d15)
-d13.textContent= 'Finance'
+d15.textContent= 'Finance'
 let d25 = document.createElement('td')
 r5.appendChild(d25)
-d23.textContent= `${finNum}`
+d25.textContent= `${finNum}`
 let d35 = document.createElement('td')
 r5.appendChild(d35)
-d33.textContent= `${finSal}`
+d35.textContent= `${finSal}`
 let d45 = document.createElement('td')
 r5.appendChild(d45)
-d43.textContent=  `${(finSal/finNum)||0}`
+d45.textContent=  `${(finSal/finNum)||0}`
 
 let r6= document.createElement('tr')
 table.appendChild(r6)
